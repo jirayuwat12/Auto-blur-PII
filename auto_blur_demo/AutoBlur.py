@@ -2,18 +2,26 @@ import cv2
 
 class AutoBlur():
     def __init__(self) -> None:
+        self.__yolo_model = None
+
+    def blur_card(self,
+                  photo_image):
+        '''
+        Blur the card in the photo_image
+        '''
         pass
 
-    def blur_card(self, 
-                  photo_image,
-                  mode = 0):
+    def blur(self, 
+             photo_image,
+             bounding_box):
         '''
-        mode :
-            1 : Blur the whole card
-            2 : Segment the card
-            3 : Segment the card and blur the background
+        Blur the specified bounding box in the photo_image
         '''
-        # Copy the image
-        ret = photo_image.copy()
-        
-        return ret
+        pass 
+    
+    def predict(self, 
+                photo_image):
+        '''
+        Detect PII card and return the bounding box
+        '''
+        pass
