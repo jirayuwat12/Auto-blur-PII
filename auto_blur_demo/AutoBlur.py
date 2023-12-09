@@ -28,6 +28,7 @@ class AutoBlur():
             startx = centerx - wide*img_wide/2
             starty = centery - height*img_height/2
             return int(startx),int(starty),int(wide*img_wide),int(height*img_height)
+        
         def blur_image(img):
             image_blurred = cv2.GaussianBlur(img, (9, 9), 1) 
             # Generate noise with same shape as that of the image
@@ -44,8 +45,10 @@ class AutoBlur():
             crop_image_blurred = blur_image(crop_image)
             blured_image[starty : starty + height , startx : startx + wide] = crop_image_blurred
             return blured_image
+        
         for bbb in bounding_box:
             photo_image = get_blur_image(photo_image,bbb[0],bbb[1],bbb[2],bbb[3])
+
         return photo_image
     
     def predict(self, 
@@ -57,8 +60,8 @@ class AutoBlur():
         if len(result) == 0:
             return []
         li = []
+
         for box in result[0]:
-            print('box', box)
             if len(box) == 0:
                 continue
             if box[-1] == 1:
