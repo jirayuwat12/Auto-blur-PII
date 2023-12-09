@@ -19,3 +19,4 @@ pip install -r requirements.txt
 
 # Reference
 1. [Targeted OCR on documents with OpenCV and PyTesseract.(Jason, 2021)](https://medium.com/analytics-vidhya/targeted-ocr-on-documents-with-opencv-and-pytesseract-edc10b5ecb62)
+1. [Visiting Card Dataset](https://www.kaggle.com/datasets/dataclusterlabs/visiting-card-id-card/data)
