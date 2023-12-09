@@ -42,6 +42,12 @@ def open_camera():
 	# Convert image from one color space to other 
 	opencv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
 
+	# Flip the image vertically
+	opencv_image = cv2.flip(opencv_image, 1)
+
+	# Blur the image
+	opencv_image = auto_blur.blur_card(opencv_image)
+
 	# Capture the latest frame and transform to image 
 	captured_image = Image.fromarray(opencv_image)	
 

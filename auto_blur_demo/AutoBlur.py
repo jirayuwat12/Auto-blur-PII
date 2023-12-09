@@ -31,7 +31,7 @@ class AutoBlur():
         def blur_image(img):
             image_blurred = cv2.GaussianBlur(img, (9, 9), 1) 
             # Generate noise with same shape as that of the image
-            noise = np.random.normal(0,50, image_blurred.shape) 
+            noise = np.random.normal(0,100, image_blurred.shape) 
             # Add the noise to the image
             img_noised = image_blurred + noise
             img_noised = np.clip(img_noised, 0, 255).astype(np.uint8)
@@ -54,8 +54,13 @@ class AutoBlur():
         Detect PII card and return the bounding box
         '''
         result = self.__yolo_model(photo_image).xyxyn
+        if len(result) == 0:
+            return []
         li = []
-        for box in result:
+        for box in result[0]:
+            print('box', box)
+            if len(box) == 0:
+                continue
             if box[-1] == 1:
                 sub_li = []
                 x_top = box[0]
