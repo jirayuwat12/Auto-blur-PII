@@ -170,3 +170,5 @@ Generate_dataset_exp.ipynb
 *.DS_store
 
 *.zip
+
+/auto_blur_demo/weight
