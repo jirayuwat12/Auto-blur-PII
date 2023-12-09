@@ -13,8 +13,7 @@ class AutoBlur():
             2 : Segment the card
             3 : Segment the card and blur the background
         '''
-        # copy image
-        photo_image = photo_image.copy()
-
-
-        return photo_image
+        # Copy the image
+        ret = photo_image.copy()
+        
+        return ret

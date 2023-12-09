@@ -42,14 +42,15 @@ def open_camera():
 	# Convert image from one color space to other 
 	opencv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
 
+	# Blur the image
+	opencv_image = auto_blur.blur_card(opencv_image)
+
 	# Capture the latest frame and transform to image 
-	captured_image = Image.fromarray(opencv_image)
-	
+	captured_image = Image.fromarray(opencv_image)	
+
 	# Convert captured image to photoimage 
 	photo_image = ImageTk.PhotoImage(image=captured_image)
 
-	# Use Auto Blur function to blur the image
-	photo_image = auto_blur.blur_card(photo_image)
 
 	# Displaying photoimage in the label 
 	label_widget.photo_image = photo_image 
