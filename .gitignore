@@ -161,10 +161,7 @@ cython_debug/
 
 /asset
 
-
 /dataset
-
-Generate_dataset_exp.ipynb
 
 
 *.DS_store
